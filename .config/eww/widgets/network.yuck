@@ -1,0 +1,7 @@
+(defpoll networkPoll
+  :interval "1s"
+  :initial "down"
+  `cat /sys/class/net/w*/operstate`)
+
+(defwidget network []
+  "${networkPoll == 'up' ? '󰖩' : '󰖪'}")

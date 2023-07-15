@@ -1,0 +1,22 @@
+(deflisten activeWorkspaceListen
+  :initial 1
+  `socat -u UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | stdbuf -o0 awk -F '>>|,' -e '/^workspace>>/ {print $2}' -e '/^focusedmon>>/ {print $3}'`)
+
+(defwidget workspaces []
+  (box
+    (workspace :index 1)
+    (workspace :index 2)
+    (workspace :index 3)
+    (workspace :index 4)
+    (workspace :index 5)
+    (workspace :index 6)
+    (workspace :index 7)
+    (workspace :index 8)
+    (workspace :index 9)
+    (workspace :index 10)))
+
+(defwidget workspace [index]
+  (button
+    :onclick "hyprctl dispatch workspace ${index}"
+    :class "workspace ${index == activeWorkspaceListen ? 'active' : ''}"
+    {index}))

@@ -1,0 +1,7 @@
+(defpoll timePoll
+  :interval "1s"
+  :initial "0:00:00"
+  `date +%H:%M:%S`)
+
+(defwidget time []
+  "󰅐 ${timePoll}")

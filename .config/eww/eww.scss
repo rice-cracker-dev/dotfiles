@@ -1,0 +1,80 @@
+window.top {
+  background-color: transparent;
+  color: #cad3f5;
+
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: 500;
+  font-size: 16px;
+}
+
+button {
+  background: transparent;
+  color: #cad3f5;
+  border: none;
+  outline-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+  padding: 4px;
+  border-radius: 4px;
+
+  &.yellow:hover {
+    background-color: shade(#eed49f, 1.1);
+  }
+
+  &.workspace {
+    border-radius: 0;
+    padding: 0 4px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &.active {
+    background: #c6a0f6;
+    color: #24273a;
+  }
+}
+
+.main {
+  margin: 0 16px;
+  
+  & > box {
+    padding: 0 12px;
+    border-radius: 4px;
+  }
+}
+
+.gray {
+  background-color: #24273a;
+}
+
+.yellow {
+  background-color: #eed49f;
+  color: #24273a;
+}
+
+.red {
+  background-color: #ed8796;
+  color: #24273a;
+}
+
+.green {
+  background-color: #a6da95;
+  color: #24273a;
+}
+
+.blue {
+  background-color: #8aadf4;
+  color: #24273a;
+}
+
+.purple {
+  background-color: #c6a0f6;
+  color: #24273a;
+}
+
+.volume {
+  font-size: 20px;
+  margin-left: 2px;
+}

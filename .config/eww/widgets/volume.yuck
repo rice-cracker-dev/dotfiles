@@ -1,0 +1,7 @@
+(defpoll volumePoll
+  :interval "100ms"
+  :initial 1
+  `wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{ print $2 }'`)
+
+(defwidget volume []
+  (box :class "volume" "${volumePoll < 0.33 ? '󰕿' : volumePoll < 0.66 ? '󰖀' : '󰕾'}"))

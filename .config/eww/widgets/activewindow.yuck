@@ -1,0 +1,6 @@
+(deflisten window
+  :initial "..."
+  "sh ~/.config/eww/scripts/active_window.sh")
+
+(defwidget activewindow [] 
+  (label :limit-width 75 :text "${window}"))

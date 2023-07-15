@@ -1,0 +1,38 @@
+(include "./widgets/time.yuck")
+(include "./widgets/network.yuck")
+(include "./widgets/volume.yuck")
+(include "./widgets/battery.yuck")
+(include "./widgets/workspaces.yuck")
+(include "./widgets/activewindow.yuck")
+
+(defwindow top
+  :monitor 0
+  :class ""
+  :geometry (geometry
+    :x "0%" :y "16px"
+    :width "100%"
+    :height "36px"
+    :anchor "top center")
+  :stacking "bg"
+  :reserve (struts :distance "52px" :side "top")
+  :windowtype "dock"
+  :wm-ignore false
+  (box
+    :class "main"
+    :spacing 8
+    :orientation "h"
+    :space-evenly false
+    (box :class "gray" (workspaces))
+    (box :class "gray"
+         :hexpand true
+         :space-evenly false
+      (box :hexpand true (activewindow)))
+    (box :class "red" :spacing 16
+      (network)
+      (volume)
+      (battery))
+    (box :class "purple" (time))
+    (button
+      :width 36 :class "yellow"
+      :onclick "systemctl poweroff"
+      "󰐥")))
