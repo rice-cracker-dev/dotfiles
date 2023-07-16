@@ -24,3 +24,8 @@ else
   # i use arch btw
   pfetch
 fi
+
+
+# Added by Toolbox App
+export PATH="$PATH:/home/khoa/.local/share/JetBrains/Toolbox/scripts"
+

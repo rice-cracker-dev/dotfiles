@@ -1,7 +1,7 @@
-(deflisten spotifyMetaTitleListen `playerctl metadata xesam:title --follow`)
-(deflisten spotifyStatusListen `playerctl status --follow`)
-(deflisten spotifyShuffleListen `playerctl shuffle --follow`)
-(deflisten spotifyLoopListen `playerctl loop --follow`)
+(deflisten spotifyMetaTitleListen `playerctl metadata xesam:title --follow -p Spot`)
+(deflisten spotifyStatusListen `playerctl status --follow -p Spot`)
+(deflisten spotifyShuffleListen `playerctl shuffle --follow -p Spot`)
+(deflisten spotifyLoopListen `playerctl loop --follow -p Spot`)
 (defvar spotifyHover false)
 
 (defwidget spotify []
@@ -23,22 +23,22 @@
           :class "green"
           (button
             :class "green flat"
-            :onclick "playerctl shuffle toggle"
+            :onclick "playerctl shuffle toggle -p Spot"
             {spotifyShuffleListen == "On" ? '󰒟' : '󰒞'})
           (button
             :class "green flat"
-            :onclick "playerctl previous"
+            :onclick "playerctl previous -p Spot"
             "󰒮")
           (button
             :class "green flat"
-            :onclick {spotifyStatusListen != 'Paused' ? 'playerctl pause' : 'playerctl play'}
+            :onclick "playerctl ${spotifyStatusListen != 'Paused' ? 'pause' : 'play'} -p Spot"
             {spotifyStatusListen != 'Paused' ? '󰏤' : '󰐊'})
           (button
             :class "green flat"
-            :onclick "playerctl previous"
-            "󰒮")
+            :onclick "playerctl previous -p Spot"
+            "󰒭")
           (button
             :class "green flat"
-            :onclick "playerctl loop ${spotifyLoopListen == 'Playlist' ? 'track' : spotifyLoopListen == 'Track' ? 'none' : 'playlist'}" 
+            :onclick "playerctl loop ${spotifyLoopListen == 'Playlist' ? 'track' : spotifyLoopListen == 'Track' ? 'none' : 'playlist'} -p Spot" 
             {spotifyLoopListen == 'Playlist' ? '󰑖' : spotifyLoopListen == 'Track' ? '󰑘' : '󰑗'}))))))
 
