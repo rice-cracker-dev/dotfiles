@@ -1,0 +1,44 @@
+(deflisten spotifyMetaTitleListen `playerctl metadata xesam:title --follow`)
+(deflisten spotifyStatusListen `playerctl status --follow`)
+(deflisten spotifyShuffleListen `playerctl shuffle --follow`)
+(deflisten spotifyLoopListen `playerctl loop --follow`)
+(defvar spotifyHover false)
+
+(defwidget spotify []
+  (eventbox
+    :onhover "${EWW_CMD} update spotifyHover=true"
+    :onhoverlost "${EWW_CMD} update spotifyHover=false"
+    (box :space-evenly false
+      (revealer
+        :transition "slideright"
+        :reveal {!spotifyHover}
+        (label
+          :limit-width 15
+          :text "  ${spotifyMetaTitleListen}"))
+      (revealer
+        :transition "slideleft" 
+        :reveal {spotifyHover}
+        (box
+          :spacing 8
+          :class "green"
+          (button
+            :class "green flat"
+            :onclick "playerctl shuffle toggle"
+            {spotifyShuffleListen == "On" ? '󰒟' : '󰒞'})
+          (button
+            :class "green flat"
+            :onclick "playerctl previous"
+            "󰒮")
+          (button
+            :class "green flat"
+            :onclick {spotifyStatusListen != 'Paused' ? 'playerctl pause' : 'playerctl play'}
+            {spotifyStatusListen != 'Paused' ? '󰏤' : '󰐊'})
+          (button
+            :class "green flat"
+            :onclick "playerctl previous"
+            "󰒮")
+          (button
+            :class "green flat"
+            :onclick "playerctl loop ${spotifyLoopListen == 'Playlist' ? 'track' : spotifyLoopListen == 'Track' ? 'none' : 'playlist'}" 
+            {spotifyLoopListen == 'Playlist' ? '󰑖' : spotifyLoopListen == 'Track' ? '󰑘' : '󰑗'}))))))
+
