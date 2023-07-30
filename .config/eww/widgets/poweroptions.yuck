@@ -1,0 +1,16 @@
+(defvar isPowerOptionsHovered false)
+
+(defwidget poweroptions []
+  (eventbox
+    :onhover "eww update isPowerOptionsHovered=true"
+    :onhoverlost "eww update isPowerOptionsHovered=false"
+    (box
+      :space-evenly false
+      (label :class "yellow" :text "")
+      (revealer
+        :reveal isPowerOptionsHovered
+        :transition "slideright"
+        (box :style "margin-left: 12px" :spacing 4
+          (button :onclick "poweroff" :class "flat yellow" "󰐥")
+          (button :onclick "reboot" :class "flat yellow" "󰜉")
+          (button :onclick "killall -u $USER" :class "flat yellow" "󰍃"))))))

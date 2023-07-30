@@ -2,9 +2,9 @@
 (include "./widgets/network.yuck")
 (include "./widgets/volume.yuck")
 (include "./widgets/battery.yuck")
-(include "./widgets/workspaces.yuck")
-(include "./widgets/activewindow.yuck")
+(include "./widgets/bspwm_workspaces.yuck")
 (include "./widgets/spotify.yuck")
+(include "./widgets/poweroptions.yuck")
 
 (defwindow top
   :monitor 0
@@ -23,12 +23,12 @@
     :spacing 8
     :orientation "h"
     :space-evenly false
-    (box :class "gray" (workspaces))
+    (box :class "gray" :vexpand true (workspaces))
     (box
       :class "gray"
       :hexpand true
       :space-evenly false
-      (box :hexpand true (activewindow)))
+      (box :hexpand true))
     (box
       :class "green spotify"
       :visible {spotifyMetaTitleListen != ''}
@@ -38,7 +38,4 @@
       (volume)
       (battery))
     (box :class "purple" (time))
-    (button
-      :width 36 :class "yellow m-0"
-      :onclick "systemctl poweroff"
-      "󰐥")))
+    (box :class "yellow" (poweroptions))))

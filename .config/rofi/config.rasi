@@ -1,0 +1,90 @@
+configuration {
+  font: "JetBrainsMono Nerd Font 12";
+  show-icons: true;
+  sort: true;
+  hover-select: true;
+  terminal: "kitty";
+  combi-modes: "drun,window";
+  display-drun: "Run applications";
+  display-clipboard: "Clipboard";
+}
+
+* {
+  background: #24273a;
+  foreground: #cad3f5;
+
+  placeholder-foreground: #a5adcb;
+
+  scrollbar-handle-background: #363a4f;
+
+  element-background: transparent;
+  element-foreground: #cad3f5;
+  element-selected-background: #c6a0f6;
+  element-selected-foreground: #24273a;
+}
+
+window {
+  background-color: transparent;
+  color: var(foreground); 
+  border: none;
+}
+
+inputbar {
+  background-color: var(background);
+  border-radius: 4px;
+  padding: 16px 20px;
+}
+
+entry {
+  placeholder-color: var(placeholder-foreground);
+}
+
+textbox-num-sep {
+  color: var(placeholder-foreground);
+}
+
+num-filtered-rows, num-rows {
+  color: var(placeholder-foreground);
+  expand: false;
+  
+  margin: 0 8px;
+}
+
+listview {
+  background-color: var(background);
+  border: none;
+
+  margin: 12px 0 0 0;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+scrollbar {
+  handle-color: var(scrollbar-handle-background);
+  
+  margin: 0 0 0 8px;
+}
+
+element {
+  border-radius: 4px;
+  padding: 8px;
+}
+
+element normal.normal {
+  background-color: var(element-background);
+  color: var(element-foreground);
+}
+
+element alternate.normal {
+  background-color: var(element-background);
+  color: var(element-foreground);
+}
+
+element selected.normal {
+  background-color: var(element-selected-background);
+  color: var(element-selected-foreground);
+}
+
+element-icon {
+  margin: 0 8px 0 0;
+}

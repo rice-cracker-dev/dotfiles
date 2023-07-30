@@ -35,7 +35,7 @@
             {spotifyStatusListen != 'Paused' ? '󰏤' : '󰐊'})
           (button
             :class "green flat"
-            :onclick "playerctl previous -p Spot"
+            :onclick "playerctl next -p Spot"
             "󰒭")
           (button
             :class "green flat"

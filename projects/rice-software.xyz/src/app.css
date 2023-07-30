@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply duration-150;
+}
+
+:root {
+  @apply text-lg;
+
+  font-family: "Inter Variable", sans-serif;
+}
+
+.btn {
+  text-transform: none;
+}

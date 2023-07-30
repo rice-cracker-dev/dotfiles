@@ -1,0 +1,4 @@
+(deflisten workspacesListen `./scripts/bspwm_workspaces.sh`)
+
+(defwidget workspaces []
+  (literal :valign "fill" :vexpand true :content workspacesListen))
