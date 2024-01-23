@@ -1,0 +1,42 @@
+@import "./colors.rasi"
+
+window {
+    background-color: var(base);
+    border-color: var(surface2);
+    color: var(text);
+
+    padding: 0;
+    border-radius: 4px;
+}
+
+element { padding: 0.1em 0.25em; }
+element-icon { size: 0.75em; }
+element-text { margin: 0 0 0 0.25em; }
+inputbar { padding: 0.25em; }
+prompt { color: var(text); }
+
+scrollbar {
+    background-color: var(base);
+    handle-color: var(surface0);
+}
+
+entry {
+    color: var(text);
+    placeholder-color: var(subtext0);
+}
+
+listview {
+    border-color: var(surface2);
+    padding: 0.25em 0;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: var(base);
+    color: var(text);
+}
+
+element selected.normal {
+    background-color: var(mauve);
+    color: var(base);
+}
