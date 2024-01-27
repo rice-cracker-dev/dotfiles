@@ -1,0 +1,26 @@
+(defvar ramWidgetIsHover false)
+
+(defwidget ramWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update ramWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update ramWidgetIsHover=false"
+        (box :space-evenly false :spacing 16
+            (label :text "󰑭" :class "text-yellow")
+            (box
+                :orientation "v" :valign "center"
+                :space-evenly false :spacing 2
+                (box :space-evenly false
+                    (revealer :transition "slideleft" :reveal {!ramWidgetIsHover}
+                        (label
+                            :style "font-size: 14px"
+                            :xalign 0
+                            :text "${round(EWW_RAM.used_mem_perc, 0)}%"))
+                    (revealer :transition "slideright" :reveal ramWidgetIsHover
+                        (label
+                            :style "font-size: 14px"
+                            :xalign 0
+                            :text "${round(EWW_RAM.used_mem / 1073741824, 2)}GB / ${round(EWW_RAM.total_mem / 1073741824, 2)}GB")))
+                (progress
+                    :value {EWW_RAM.used_mem_perc}
+                    :height 2 :hexpand true
+                    :class "scale variant-yellow")))))

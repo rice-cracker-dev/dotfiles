@@ -1,0 +1,8 @@
+(defpoll timePoll
+    :interval "1s"
+    `date +"%H:%M:%S"`)
+
+(defwidget timeWidget []
+    (box :spacing 8 :space-evenly false :valign "center"
+        (label :text "󰥔" :class "text-mauve")
+        (label :text timePoll)))

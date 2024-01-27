@@ -1,0 +1,24 @@
+(defvar brightnessWidgetIsHover false)
+(deflisten brightnessListener "./scripts/listen_brightness_changes.sh")
+
+(defwidget brightnessWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update brightnessWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update brightnessWidgetIsHover=false"
+        (box :space-evenly false
+            ; hard-code font size to 20px to fix icon size inconsistency
+            (label :style "font-size: 18px" :text {
+                brightnessListener.percentage  > 66 ? "󰃠" :
+                brightnessListener.percentage > 33 ? "󰃟" : "󰃞"
+            })
+            (revealer :transition "slideleft" :reveal brightnessWidgetIsHover
+                (box
+                    :style "margin-left: 8px" 
+                    :spacing 8
+                    :space-evenly false
+                    (scale
+                        :class "scale variant-mauve"
+                        ; the scale is buggy when setting :max to brightnessListener.max_brightness so ill just set it to 7500
+                        :value {brightnessListener.percentage} :max 100
+                        :onchange "brightnessctl set {}%")
+                    (label :text "${round(brightnessListener.percentage, 0)}%"))))))

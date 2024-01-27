@@ -1,0 +1,32 @@
+(include "./widgets/index.yuck")
+
+(defwindow bottom
+    :monitor 0
+    :geometry (geometry
+        :x "0%"
+        :y "8px"
+        :width "100%"
+        :height "48px"
+        :anchor "bottom center")
+    :stacking "bg"
+    :reserve (struts :distance "68px" :side "bottom")
+    :windowtype "dock"
+    :wm-ignore false
+    (box
+        :class "main"
+        :space-evenly false
+        :spacing 4
+        (box :class "variant-base card" :hexpand true)
+        (box :class "variant-base card" (disksWidget))
+        (box :class "variant-base card" (cpuWidget))
+        (box :class "variant-base card" (ramWidget))
+        (box
+            :class "variant-base card"
+            :spacing 16
+            :space-evenly false
+            (batteryWidget)
+            (brightnessWidget)
+            (volumeWidget)
+            (wifiWidget))
+        (box :class "variant-base card" (timeWidget)))    
+)

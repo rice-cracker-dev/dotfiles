@@ -1,0 +1,25 @@
+(defvar diskWidgetReveal false)
+
+(defwidget diskWidget [disk mount_point]
+    (eventbox
+        :onclick "${EWW_CMD} update diskWidgetReveal=${!diskWidgetReveal}"
+        (box :space-evenly false :spacing 16
+            (label :text "󰉋" :class "text-yellow")
+            (box
+                :orientation "v" :valign "center"
+                :space-evenly false :spacing 2
+                (box :space-evenly false
+                    (revealer :transition "slideleft" :reveal {!diskWidgetReveal}
+                        (label
+                            :style "font-size: 14px"
+                            :xalign 0
+                            :text "${mount_point} (${round(disk.used_perc, 0)}%)"))
+                    (revealer :transition "slideright" :reveal diskWidgetReveal
+                        (label
+                            :style "font-size: 14px"
+                            :xalign 0
+                            :text "${round(disk.used / 1073741824, 2)}GB / ${round(disk.total / 1073741824, 2)}GB")))
+                (progress
+                    :value {disk.used_perc}
+                    :height 2 :hexpand true
+                    :class "scale variant-yellow")))))

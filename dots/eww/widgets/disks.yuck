@@ -1,0 +1,14 @@
+(defvar disksWidgetSelectedIndex 0)
+(defvar disksWidgetPreviousSelectedIndex 0)
+
+(defwidget disksWidget []
+    (eventbox :onscroll "./scripts/scroll_variable.sh disksWidgetSelectedIndex {} ${jq(EWW_DISK, '. | length')} disksWidgetPreviousSelectedIndex"
+        (box :space-evenly false :valign "center"
+            (for mount_point in {jq(EWW_DISK, '. | keys')}
+                ; (revealer :reveal :transition "slideup" )
+                (revealer
+                    :transition {jq(EWW_DISK, '. | keys')[disksWidgetSelectedIndex] == mount_point ? "slideleft" : "slideright"}
+                    :reveal {jq(EWW_DISK, '. | keys')[disksWidgetSelectedIndex] == mount_point}
+                    (diskWidget :disk {EWW_DISK[mount_point]} :mount_point mount_point))
+            ))))
+

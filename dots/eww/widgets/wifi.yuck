@@ -1,0 +1,12 @@
+(defvar wifiWidgetIsHover false)
+
+(defpoll wifiPoll :interval "1s" "./scripts/get_net_state.sh")
+
+(defwidget wifiWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update wifiWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update wifiWidgetIsHover=false"
+        (box :space-evenly false
+            (label :text {wifiPoll.state == "up" ? "󰖩" : "󰖪"})
+            (revealer :transition "slideleft" :reveal wifiWidgetIsHover
+                (label :text "${wifiPoll.ssid}" :style "margin-left: 8px")))))

@@ -1,0 +1,10 @@
+@import "./styles/variants.scss";
+@import "./styles/utilities.scss";
+
+* { all: unset; }
+
+window {
+    background: transparent;
+    font-size: 16px;
+}
+

@@ -1,0 +1,20 @@
+(defvar batteryWidgetIsHover false)
+
+(defwidget batteryWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update batteryWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update batteryWidgetIsHover=false"
+        (box  :space-evenly false
+            (label :style "font-size: 18px" :text {
+                EWW_BATTERY.total_avg > 90 ? "󰁹" :
+                EWW_BATTERY.total_avg > 80 ? "󰂂" :
+                EWW_BATTERY.total_avg > 70 ? "󰂁" :
+                EWW_BATTERY.total_avg > 60 ? "󰂀" :
+                EWW_BATTERY.total_avg > 50 ? "󰁿" :
+                EWW_BATTERY.total_avg > 40 ? "󰁾" :
+                EWW_BATTERY.total_avg > 30 ? "󰁽" :
+                EWW_BATTERY.total_avg > 20 ? "󰁼" :
+                EWW_BATTERY.total_avg > 10 ? "󰁻" : "󰁺"})
+            (revealer :transition "slideleft" :reveal batteryWidgetIsHover
+                (box :space-evenly false
+                    (label :text "${round(EWW_BATTERY.total_avg, 0)}% (${EWW_BATTERY.BAT0.status})" :style "margin-left: 8px"))))))

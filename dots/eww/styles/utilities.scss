@@ -1,0 +1,22 @@
+.main { margin: 0 8px; }
+
+.card {
+    border-radius: 4px;
+    padding: 0px 16px;
+}
+
+.btn { border-radius: 4px; }
+
+.scale {
+    & trough {
+        min-width: 72px;
+        min-height: 4px;
+
+        border-radius: 2px;
+    }
+
+    & trough highlight, trough progress {
+        min-height: 4px;
+        border-radius: 2px;
+    }
+}

@@ -1,0 +1,10 @@
+(include "./widgets/time.yuck")
+(include "./widgets/wifi.yuck")
+(include "./widgets/volume.yuck")
+(include "./widgets/brightness.yuck")
+(include "./widgets/battery.yuck")
+(include "./widgets/cpu.yuck")
+(include "./widgets/ram.yuck")
+(include "./widgets/disk.yuck")
+(include "./widgets/disks.yuck")
+

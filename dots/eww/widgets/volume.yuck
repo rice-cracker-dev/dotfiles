@@ -1,0 +1,24 @@
+(defvar volumeWidgetIsHover false)
+(deflisten volumeListener "./scripts/listen_volume_changes.sh")
+
+(defwidget volumeWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update volumeWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update volumeWidgetIsHover=false"
+        (box :space-evenly false
+            ; hard-code font size to 20px to fix icon size inconsistency
+            (label :style "font-size: 20px" :text {
+                volumeListener.muted ? "󰝟" :
+                volumeListener.volume > 66 ? "󰕾" :
+                volumeListener.volume > 33 ? "󰖀" : "󰕿"
+            })
+            (revealer :transition "slideleft" :reveal volumeWidgetIsHover
+                (box
+                    :style "margin-left: 8px" 
+                    :spacing 8
+                    :space-evenly false
+                    (scale
+                        :class "scale variant-mauve"
+                        :value {volumeListener.volume} :max 100
+                        :onchange "pamixer --set-volume {}")
+                    (label :text "${volumeListener.volume}%${volumeListener.muted ? ' (Muted)' : ''}"))))))

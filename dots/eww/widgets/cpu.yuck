@@ -1,0 +1,19 @@
+(defvar cpuWidgetIsHover false)
+
+(defwidget cpuWidget []
+    (eventbox
+        :onhover "${EWW_CMD} update cpuWidgetIsHover=true"
+        :onhoverlost "${EWW_CMD} update cpuWidgetIsHover=false"
+        (box :space-evenly false :spacing 16
+            (label :text "" :class "text-yellow")
+            (box
+                :orientation "v" :valign "center"
+                :space-evenly false :spacing 2
+                (label
+                    :style "font-size: 14px"
+                    :xalign 0
+                    :text "${round(EWW_CPU.avg, 0)}%")   
+                (progress
+                    :value {EWW_CPU.avg}
+                    :height 2 :hexpand true
+                    :class "scale variant-yellow")))))
