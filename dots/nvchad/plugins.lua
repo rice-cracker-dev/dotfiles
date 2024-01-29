@@ -60,6 +60,12 @@ local plugins = {
     --   "mg979/vim-visual-multi",
     --   lazy = false,
     -- }
+    {
+        "mfussenegger/nvim-lint",
+        config = function()
+            require("custom.configs.nvimlint")
+        end,
+    }
 }
 
 return plugins

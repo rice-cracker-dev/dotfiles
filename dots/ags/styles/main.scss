@@ -1,0 +1,21 @@
+@import './utilities.scss';
+@import './variants.scss';
+
+* {
+    all: unset;
+}
+
+tooltip, menu {
+    @extend .variant-mantle.bordered;
+
+    border: 1px solid $surface0;
+    border-radius: 4px;
+
+    padding: 3px 2px;
+}
+
+menuitem {
+    @extend .variant-ghost-light.btn;
+
+    margin: 2px 4px;
+}

@@ -30,6 +30,10 @@ variantBuilderFormat = """.variant-{0} {{
         background-color: {5};
         color: {6};
     }} 
+
+    &.bordered {{
+        border: 1px solid $surface0;
+    }}
 }}
 
 .scale.variant-{0} {{

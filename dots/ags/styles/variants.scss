@@ -1,0 +1,791 @@
+/* inspired by the Tailwind Framework & Skeleton UI Toolkit :) */
+
+/* Colors */
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+$lavender: #b4befe;
+$text: #cdd6f4;
+$subtext1: #bac2de;
+$subtext0: #a6adc8;
+$overlay2: #9399b2;
+$overlay1: #7f849c;
+$overlay0: #6c7086;
+$surface2: #585b70;
+$surface1: #45475a;
+$surface0: #313244;
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+
+/* Background colors */
+.bg-rosewater { background-color: $rosewater; }
+.bg-flamingo { background-color: $flamingo; }
+.bg-pink { background-color: $pink; }
+.bg-mauve { background-color: $mauve; }
+.bg-red { background-color: $red; }
+.bg-maroon { background-color: $maroon; }
+.bg-peach { background-color: $peach; }
+.bg-yellow { background-color: $yellow; }
+.bg-green { background-color: $green; }
+.bg-teal { background-color: $teal; }
+.bg-sky { background-color: $sky; }
+.bg-sapphire { background-color: $sapphire; }
+.bg-blue { background-color: $blue; }
+.bg-lavender { background-color: $lavender; }
+.bg-text { background-color: $text; }
+.bg-subtext1 { background-color: $subtext1; }
+.bg-subtext0 { background-color: $subtext0; }
+.bg-overlay2 { background-color: $overlay2; }
+.bg-overlay1 { background-color: $overlay1; }
+.bg-overlay0 { background-color: $overlay0; }
+.bg-surface2 { background-color: $surface2; }
+.bg-surface1 { background-color: $surface1; }
+.bg-surface0 { background-color: $surface0; }
+.bg-base { background-color: $base; }
+.bg-mantle { background-color: $mantle; }
+.bg-crust { background-color: $crust; }
+
+
+/* Text colors */
+.text-rosewater { color: $rosewater; }
+.text-flamingo { color: $flamingo; }
+.text-pink { color: $pink; }
+.text-mauve { color: $mauve; }
+.text-red { color: $red; }
+.text-maroon { color: $maroon; }
+.text-peach { color: $peach; }
+.text-yellow { color: $yellow; }
+.text-green { color: $green; }
+.text-teal { color: $teal; }
+.text-sky { color: $sky; }
+.text-sapphire { color: $sapphire; }
+.text-blue { color: $blue; }
+.text-lavender { color: $lavender; }
+.text-text { color: $text; }
+.text-subtext1 { color: $subtext1; }
+.text-subtext0 { color: $subtext0; }
+.text-overlay2 { color: $overlay2; }
+.text-overlay1 { color: $overlay1; }
+.text-overlay0 { color: $overlay0; }
+.text-surface2 { color: $surface2; }
+.text-surface1 { color: $surface1; }
+.text-surface0 { color: $surface0; }
+.text-base { color: $base; }
+.text-mantle { color: $mantle; }
+.text-crust { color: $crust; }
+
+
+/* Variants */
+.variant-rosewater {
+    background-color: $rosewater;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($rosewater, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($rosewater, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-rosewater {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $rosewater }
+    }
+}
+.variant-flamingo {
+    background-color: $flamingo;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($flamingo, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($flamingo, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-flamingo {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $flamingo }
+    }
+}
+.variant-pink {
+    background-color: $pink;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($pink, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($pink, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-pink {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $pink }
+    }
+}
+.variant-mauve {
+    background-color: $mauve;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($mauve, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($mauve, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-mauve {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $mauve }
+    }
+}
+.variant-red {
+    background-color: $red;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($red, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($red, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-red {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $red }
+    }
+}
+.variant-maroon {
+    background-color: $maroon;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($maroon, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($maroon, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-maroon {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $maroon }
+    }
+}
+.variant-peach {
+    background-color: $peach;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($peach, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($peach, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-peach {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $peach }
+    }
+}
+.variant-yellow {
+    background-color: $yellow;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($yellow, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($yellow, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-yellow {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $yellow }
+    }
+}
+.variant-green {
+    background-color: $green;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($green, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($green, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-green {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $green }
+    }
+}
+.variant-teal {
+    background-color: $teal;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($teal, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($teal, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-teal {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $teal }
+    }
+}
+.variant-sky {
+    background-color: $sky;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($sky, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($sky, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-sky {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $sky }
+    }
+}
+.variant-sapphire {
+    background-color: $sapphire;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($sapphire, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($sapphire, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-sapphire {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $sapphire }
+    }
+}
+.variant-blue {
+    background-color: $blue;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($blue, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($blue, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-blue {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $blue }
+    }
+}
+.variant-lavender {
+    background-color: $lavender;
+    color: $base;
+
+    &.btn:hover {
+        background-color: shade($lavender, 0.95);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: shade($lavender, 0.9);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-lavender {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $lavender }
+    }
+}
+.variant-overlay2 {
+    background-color: $overlay2;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($overlay2, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($overlay2, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-overlay2 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $overlay2 }
+    }
+}
+.variant-overlay1 {
+    background-color: $overlay1;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($overlay1, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($overlay1, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-overlay1 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $overlay1 }
+    }
+}
+.variant-overlay0 {
+    background-color: $overlay0;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($overlay0, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($overlay0, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-overlay0 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $overlay0 }
+    }
+}
+.variant-surface2 {
+    background-color: $surface2;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($surface2, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($surface2, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-surface2 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $surface2 }
+    }
+}
+.variant-surface1 {
+    background-color: $surface1;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($surface1, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($surface1, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-surface1 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $surface1 }
+    }
+}
+.variant-surface0 {
+    background-color: $surface0;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($surface0, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($surface0, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-surface0 {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $surface0 }
+    }
+}
+.variant-base {
+    background-color: $base;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($base, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($base, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-base {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $base }
+    }
+}
+.variant-mantle {
+    background-color: $mantle;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($mantle, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($mantle, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-mantle {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $mantle }
+    }
+}
+.variant-crust {
+    background-color: $crust;
+    color: $text;
+
+    &.btn:hover {
+        background-color: shade($crust, 0.95);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: shade($crust, 0.9);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-crust {
+    background-color: transparent;
+
+    & trough {
+        background-color: $crust;
+
+        & highlight, progress { background-color: $crust }
+    }
+}
+.variant-ghost-light {
+    background-color: rgba(255, 255, 255, 0);
+    color: $text;
+
+    &.btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $text;
+    } 
+
+    &.btn:active {
+        background-color: rgba(255, 255, 255, 0.2);
+        color: $text;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-ghost-light {
+    background-color: transparent;
+
+    & trough {
+        background-color: rgba(0, 0, 0, 0.1);
+
+        & highlight, progress { background-color: rgba(255, 255, 255, 0.1) }
+    }
+}
+.variant-ghost-dark {
+    background-color: rgba(0, 0, 0, 0);
+    color: $base;
+
+    &.btn:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: $base;
+    } 
+
+    &.btn:active {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: $base;
+    } 
+
+    &.bordered {
+        border: 1px solid $surface0;
+    }
+}
+
+.scale.variant-ghost-dark {
+    background-color: transparent;
+
+    & trough {
+        background-color: rgba(0, 0, 0, 0.1);
+
+        & highlight, progress { background-color: rgba(255, 255, 255, 0.1) }
+    }
+}
+
