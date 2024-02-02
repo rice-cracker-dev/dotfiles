@@ -20,7 +20,7 @@ if ! [ -f /etc/pacman.d/chaotic-mirrorlist ]; then
 fi
 
 # install all packages in packages.txt
-yay -S $(cat ./packages.txt)
+yay -S --noconfirm $(cat ./packages.txt)
 
 # configure
 bash ./configure.sh
